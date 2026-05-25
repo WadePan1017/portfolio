@@ -3,19 +3,19 @@ const contactInfo = [
   {
     icon: '📧',
     label: '邮箱',
-    value: 'your-email@example.com',
-    href: 'mailto:your-email@example.com',
+    value: '2455177610@qq.com',
+    href: 'mailto:2455177610@qq.com',
   },
   {
     icon: '💻',
     label: 'GitHub',
-    value: 'github.com/yourusername',
-    href: 'https://github.com/yourusername',
+    value: 'github.com/pan245517-arch',
+    href: 'https://github.com/pan245517-arch',
   },
   {
     icon: '📍',
     label: '所在地',
-    value: '中国',
+    value: '贵阳',
     href: null,
   },
 ]
@@ -27,7 +27,7 @@ const contactInfo = [
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
         联系我
       </h2>
-      <p class="text-gray mb-12">有问题或合作机会？欢迎联系我</p>
+      <p class="text-gray mb-12">有合作机会或想聊聊？欢迎联系我</p>
 
       <div class="grid sm:grid-cols-3 gap-6 mb-12">
         <div

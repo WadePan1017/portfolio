@@ -1,7 +1,7 @@
 <script setup>
 const highlights = [
-  { number: '1+', label: '年开发经验' },
-  { number: '5+', label: '完成项目' },
+  { number: '6+', label: '掌握技能' },
+  { number: '2', label: '跨领域能力' },
   { number: '100%', label: '学习热情' },
 ]
 </script>
@@ -31,14 +31,16 @@ const highlights = [
 
         <!-- Info -->
         <div>
-          <h3 class="text-2xl font-semibold text-white mb-4">前端开发爱好者</h3>
+          <h3 class="text-2xl font-semibold text-white mb-4">Wade Pan / 潘伟东</h3>
           <p class="text-gray mb-6 leading-relaxed">
-            我是一名热爱前端开发的应届毕业生，对构建用户友好的 Web 应用充满热情。
-            虽然经验尚浅，但我有强烈的学习欲望和快速适应新技术的能力。
+            我是一名兼具前端开发与视觉创作能力的应届毕业生。在前端方面，我掌握
+            HTML、CSS、JavaScript 和 Vue 框架，能够独立完成响应式网站的开发；
+            在视觉方面，我擅长摄影摄像和视频剪辑，能用 Premiere Pro 和 Photoshop
+            完成从素材采集到成片的完整流程。
           </p>
           <p class="text-gray mb-8 leading-relaxed">
-            我相信好的用户体验来自于对细节的关注和对技术的深入理解。
-            我正在寻找一个能让我成长的前端开发岗位，期待与优秀的团队一起工作。
+            我相信技术与审美的结合能创造出更好的产品体验。我正在寻找一个前端开发岗位，
+            期待能将我的跨领域技能发挥到工作中，与团队一起打造优秀的产品。
           </p>
 
           <!-- Stats -->

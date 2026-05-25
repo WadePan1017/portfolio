@@ -1,33 +1,33 @@
 <script setup>
 const skillCategories = [
   {
-    title: '前端基础',
+    title: '前端开发',
     icon: '🌐',
     skills: [
-      { name: 'HTML5', level: 85 },
-      { name: 'CSS3', level: 80 },
-      { name: 'JavaScript', level: 70 },
-      { name: '响应式设计', level: 75 },
+      { name: 'HTML5', level: 80 },
+      { name: 'CSS3', level: 75 },
+      { name: 'JavaScript', level: 65 },
+      { name: 'Vue 3', level: 60 },
     ]
   },
   {
-    title: '框架工具',
-    icon: '⚡',
+    title: '视觉创作',
+    icon: '🎬',
     skills: [
-      { name: 'Vue 3', level: 65 },
-      { name: 'Tailwind CSS', level: 75 },
-      { name: 'Vite', level: 60 },
-      { name: 'Git', level: 70 },
+      { name: 'Premiere Pro', level: 80 },
+      { name: 'Photoshop', level: 75 },
+      { name: '摄影摄像', level: 70 },
+      { name: '视频剪辑', level: 80 },
     ]
   },
   {
-    title: '其他技能',
-    icon: '🛠️',
+    title: '综合素质',
+    icon: '💪',
     skills: [
-      { name: 'Photoshop', level: 80 },
-      { name: 'Premiere Pro', level: 75 },
-      { name: 'Figma', level: 60 },
-      { name: '团队协作', level: 70 },
+      { name: 'Tailwind CSS', level: 65 },
+      { name: 'Git 版本控制', level: 60 },
+      { name: '审美与设计', level: 70 },
+      { name: '团队协作', level: 75 },
     ]
   },
 ]

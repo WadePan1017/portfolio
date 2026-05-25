@@ -40,7 +40,7 @@ onMounted(() => {
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
         你好，我是
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-          开发者
+          Wade Pan
         </span>
       </h1>
 
@@ -49,8 +49,8 @@ onMounted(() => {
       </div>
 
       <p class="text-gray max-w-xl mx-auto mb-10 text-lg">
-        热爱前端开发，专注于构建优秀的用户体验。<br>
-        使用 Vue、Tailwind CSS 等现代技术栈。
+        热爱前端开发与视觉创作，擅长将设计转化为用户体验。<br>
+        同时具备摄影摄像与视频剪辑能力。
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
