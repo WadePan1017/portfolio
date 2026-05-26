@@ -1,4 +1,6 @@
 <script setup>
+import avatar from '../assets/avatar.png'
+
 const highlights = [
   { number: '6+', label: '掌握技能' },
   { number: '2', label: '跨领域能力' },
@@ -19,10 +21,8 @@ const highlights = [
         <div class="flex justify-center">
           <div class="relative">
             <div class="w-64 h-64 rounded-2xl bg-gradient-to-br from-primary to-purple-500 p-1">
-              <div class="w-full h-full rounded-2xl bg-dark-light flex items-center justify-center">
-                <svg class="w-24 h-24 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
+              <div class="w-full h-full rounded-2xl bg-dark-light overflow-hidden">
+                <img :src="avatar" alt="Wade Pan" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-xl blur-xl"></div>
