@@ -1,4 +1,8 @@
 <script setup>
+import screenshotAi from '../assets/project-ai-tools.png'
+import screenshotPortfolio from '../assets/project-portfolio.png'
+import screenshotFurniture from '../assets/project-furniture.png'
+
 const projects = [
   {
     title: 'AI 工具导航站',
@@ -12,7 +16,7 @@ const projects = [
     ],
     demo: 'https://WadePan1017.github.io/ai-tools-site/',
     github: 'https://github.com/WadePan1017/ai-tools-site',
-    gradient: 'from-violet-500 to-purple-600',
+    screenshot: screenshotAi,
   },
   {
     title: '个人作品集网站',
@@ -26,7 +30,7 @@ const projects = [
     ],
     demo: 'https://WadePan1017.github.io/portfolio/',
     github: 'https://github.com/WadePan1017/portfolio',
-    gradient: 'from-cyan-500 to-blue-600',
+    screenshot: screenshotPortfolio,
   },
   {
     title: '上海非凡大师家居',
@@ -40,7 +44,7 @@ const projects = [
     ],
     demo: 'http://www.topr8.cn/',
     github: 'https://github.com/WadePan1017',
-    gradient: 'from-emerald-500 to-teal-600',
+    screenshot: screenshotFurniture,
   },
 ]
 </script>
@@ -61,12 +65,14 @@ const projects = [
           :key="project.title"
           class="glow-card overflow-hidden group"
         >
-          <!-- Project Header -->
-          <div :class="['h-48 bg-gradient-to-br', project.gradient, 'flex items-center justify-center relative overflow-hidden']">
-            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-            <svg class="w-16 h-16 text-white/20 group-hover:text-white/30 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
+          <!-- Project Screenshot -->
+          <div class="h-48 relative overflow-hidden bg-dark-lighter">
+            <img
+              :src="project.screenshot"
+              :alt="project.title + ' 截图'"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-light/60 to-transparent"></div>
           </div>
 
           <!-- Project Info -->

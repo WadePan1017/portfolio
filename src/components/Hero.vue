@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 const title = ref('')
-const fullTitle = '前端开发工程师'
+const fullTitle = '用代码构建体验，用镜头捕捉瞬间'
 const showCursor = ref(true)
 
 onMounted(() => {

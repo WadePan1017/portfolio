@@ -2,9 +2,9 @@
 import avatar from '../assets/avatar.png'
 
 const highlights = [
-  { number: '6+', label: '掌握技能' },
-  { number: '2', label: '跨领域能力' },
-  { number: '100%', label: '学习热情' },
+  { number: '3+', label: '完成项目' },
+  { number: '1', label: '商业客户' },
+  { number: '50+', label: 'AI 工具收录' },
 ]
 </script>
 
