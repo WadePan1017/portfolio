@@ -1,4 +1,25 @@
 <script setup>
+import { ref } from 'vue'
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+const sent = ref(false)
+
+function handleSubmit() {
+  if (!message.value.trim()) return
+
+  const subject = `来自 ${name.value || '访客'} 的留言 - 作品集`
+  const body = `发送者：${name.value || '未填写'}
+邮箱：${email.value || '未填写'}
+
+留言内容：
+${message.value}
+`
+  window.location.href = `mailto:2455177610@qq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  sent.value = true
+}
+
 const contactInfo = [
   {
     icon: '📧',
@@ -51,30 +72,36 @@ const contactInfo = [
 
       <div class="bg-dark-light border border-dark-lighter rounded-2xl p-8">
         <h3 class="text-xl font-semibold text-white mb-4">给我发消息</h3>
-        <form class="space-y-4" @submit.prevent>
+        <form class="space-y-4" @submit.prevent="handleSubmit">
           <div class="grid sm:grid-cols-2 gap-4">
             <input
+              v-model="name"
               type="text"
               placeholder="你的名字"
               class="w-full px-4 py-3 bg-dark-lighter border border-dark-lighter rounded-lg text-white placeholder-gray focus:outline-none focus:border-primary transition-colors"
             />
             <input
+              v-model="email"
               type="email"
               placeholder="你的邮箱"
               class="w-full px-4 py-3 bg-dark-lighter border border-dark-lighter rounded-lg text-white placeholder-gray focus:outline-none focus:border-primary transition-colors"
             />
           </div>
           <textarea
+            v-model="message"
             rows="4"
             placeholder="你的消息..."
             class="w-full px-4 py-3 bg-dark-lighter border border-dark-lighter rounded-lg text-white placeholder-gray focus:outline-none focus:border-primary transition-colors resize-none"
           ></textarea>
-          <button
-            type="submit"
-            class="w-full sm:w-auto px-8 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-medium transition-colors"
-          >
-            发送消息
-          </button>
+          <div class="flex items-center gap-4">
+            <button
+              type="submit"
+              class="px-8 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-medium transition-colors"
+            >
+              发送消息
+            </button>
+            <span v-if="sent" class="text-green-400 text-sm">邮件客户端已打开，请发送邮件即可</span>
+          </div>
         </form>
       </div>
     </div>
