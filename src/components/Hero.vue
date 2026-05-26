@@ -42,7 +42,7 @@ onMounted(() => {
       </div>
 
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-        你好，我是<br class="md:hidden" />
+        你好，我是<br />
         <span class="gradient-text">Wade Pan</span>
       </h1>
 
