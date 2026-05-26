@@ -2,7 +2,7 @@
 const projects = [
   {
     title: 'AI 工具导航站',
-    description: '收录 30 个优质 AI 工具，支持分类筛选和实时搜索。涵盖聊天对话、图像生成、视频生成、编程开发等 7 个分类。',
+    description: '收录 50 余个优质 AI 工具，支持分类筛选和实时搜索。涵盖聊天对话、图像生成、视频生成、编程开发等 8 个分类。',
     tags: ['Vue3', 'Tailwind CSS', 'Vite', '搜索筛选'],
     demo: 'https://WadePan1017.github.io/ai-tools-site/',
     github: 'https://github.com/WadePan1017/ai-tools-site',

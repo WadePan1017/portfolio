@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: '💻',
     label: 'GitHub',
-    value: 'github.com/pan245517-arch',
-    href: 'https://github.com/pan245517-arch',
+    value: 'github.com/WadePan1017',
+    href: 'https://github.com/WadePan1017',
   },
   {
     icon: '📍',
