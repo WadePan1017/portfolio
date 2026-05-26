@@ -2,7 +2,7 @@
   <footer class="py-8 px-6 border-t border-dark-lighter">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="text-gray text-sm">
-        © 2025 Wade Pan. All rights reserved.
+        © 2026 Wade Pan. All rights reserved.
       </div>
 
       <div class="flex items-center gap-6">

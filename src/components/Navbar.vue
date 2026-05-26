@@ -22,7 +22,7 @@ function scrollTo(href) {
   <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-dark-lighter/50">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#hero" class="text-xl font-bold text-white tracking-tight">
-        <span class="text-primary">&lt;</span>Dev<span class="text-primary">/&gt;</span>
+        Wade
       </a>
 
       <!-- Desktop Nav -->

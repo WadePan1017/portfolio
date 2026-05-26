@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: '📍',
     label: '所在地',
-    value: '贵阳',
+    value: '上海',
     href: null,
   },
 ]
