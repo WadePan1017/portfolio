@@ -25,12 +25,6 @@ const services = [
     unit: '元/个',
   },
 ]
-
-const contactInfo = {
-  phone: '13507943852',
-  wechat: '13507943852',
-  email: '2455177610@qq.com',
-}
 </script>
 
 <template>
@@ -69,29 +63,6 @@ const contactInfo = {
             <span class="text-2xl font-bold gradient-text">{{ service.price }}</span>
             <span class="text-gray text-sm ml-1">{{ service.unit }}</span>
           </div>
-        </div>
-      </div>
-
-      <!-- Contact CTA -->
-      <div class="glow-card p-8 text-center">
-        <h3 class="text-xl font-semibold text-white mb-3">立即咨询</h3>
-        <p class="text-gray text-sm mb-6">告诉我你的需求，我会在 24 小时内回复</p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            :href="'tel:' + contactInfo.phone"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/15 to-primary-light/15 hover:from-primary/25 hover:to-primary-light/25 text-primary-light rounded-lg text-sm font-medium transition-all border border-primary/10 hover:border-primary/30"
-          >
-            <span>📞</span>
-            <span>{{ contactInfo.phone }}</span>
-          </a>
-          <a
-            :href="'mailto:' + contactInfo.email"
-            class="inline-flex items-center gap-2 px-6 py-3 border border-dark-border hover:border-primary/40 text-gray hover:text-white rounded-lg text-sm font-medium transition-all hover:bg-dark-lighter"
-          >
-            <span>📧</span>
-            <span>{{ contactInfo.email }}</span>
-          </a>
         </div>
       </div>
     </div>
