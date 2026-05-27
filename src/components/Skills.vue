@@ -17,6 +17,7 @@ const skillCategories = [
     icon: '🎬',
     skills: [
       { name: 'Premiere Pro', desc: '剪辑调色、多轨合成' },
+      { name: 'After Effects', desc: '动态视觉、特效制作' },
       { name: 'Photoshop', desc: '修图合成、UI 素材处理' },
       { name: '摄影摄像', desc: '产品拍摄、场景构图' },
       { name: '视频剪辑', desc: '从素材到成片的完整流程' },

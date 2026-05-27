@@ -22,6 +22,12 @@ ${message.value}
 
 const contactInfo = [
   {
+    icon: '📞',
+    label: '电话',
+    value: '13507943852',
+    href: 'tel:13507943852',
+  },
+  {
     icon: '📧',
     label: '邮箱',
     value: '2455177610@qq.com',
@@ -32,12 +38,6 @@ const contactInfo = [
     label: 'GitHub',
     value: 'github.com/WadePan1017',
     href: 'https://github.com/WadePan1017',
-  },
-  {
-    icon: '📍',
-    label: '所在地',
-    value: '上海',
-    href: null,
   },
 ]
 </script>

@@ -2,8 +2,8 @@
 import avatar from '../assets/avatar.png'
 
 const highlights = [
-  { number: '3+', label: '完成项目' },
-  { number: '1', label: '商业客户' },
+  { number: '5+', label: '完成项目' },
+  { number: '2', label: '商业客户' },
   { number: '50+', label: 'AI 工具收录' },
 ]
 </script>

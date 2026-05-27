@@ -2,6 +2,8 @@
 import screenshotAi from '../assets/project-ai-tools.png'
 import screenshotPortfolio from '../assets/project-portfolio.png'
 import screenshotFurniture from '../assets/project-furniture.png'
+import screenshotAdmin from '../assets/project-admin.png'
+import screenshotZrzr from '../assets/project-zrzr.png'
 
 const projects = [
   {
@@ -47,6 +49,36 @@ const projects = [
     github: 'https://github.com/WadePan1017',
     screenshot: screenshotFurniture,
   },
+  {
+    title: 'Just Fulfillment 后台管理系统',
+    description: '全栈后台管理系统，包含仪表盘数据可视化、文件管理、用户权限等企业级功能模块。',
+    tags: ['Vue3', 'TypeScript', 'Element Plus', 'ECharts', 'Node.js', 'SQLite'],
+    highlights: [
+      '采用 Vue3 + TypeScript 前端架构，Element Plus 组件库构建管理界面',
+      '集成 ECharts 实现仪表盘数据可视化，直观展示业务指标',
+      '实现文件下载管理、笔记管理、待办事项等核心业务模块',
+      'Node.js + SQLite 后端，Docker 容器化部署至 Railway 平台',
+      '完整的登录注册与路由鉴权，保障系统安全性',
+    ],
+    demo: 'https://just-fulfillment-production-d6a9.up.railway.app/',
+    github: 'https://github.com/WadePan1017/Public',
+    screenshot: screenshotAdmin,
+  },
+  {
+    title: 'ZRZR 正日移门官网',
+    description: '为温州正日家居有限公司独立交付的品牌展示官网，从需求对接到上线全程负责。',
+    tags: ['Vue3', 'Vite', 'ScrollReveal', '响应式', '企业站'],
+    highlights: [
+      '独立完成品牌视觉设计与前端开发，定位"门的艺术家"高端品牌形象',
+      '实现产品分类展示、展厅浏览、发展历程等完整页面体系',
+      '采用 ScrollReveal 滚动动画增强页面交互体验',
+      '响应式适配 PC / 平板 / 手机，确保多端体验一致',
+      '网站已正式上线运营，服务客户日常业务推广',
+    ],
+    demo: 'http://www.zrzr.top/',
+    github: 'https://github.com/WadePan1017',
+    screenshot: screenshotZrzr,
+  },
 ]
 </script>
 
@@ -60,11 +92,11 @@ const projects = [
         <p class="text-gray text-lg">我独立开发的部分项目</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="flex flex-wrap justify-center gap-8">
         <div
           v-for="project in projects"
           :key="project.title"
-          class="glow-card overflow-hidden group"
+          class="glow-card overflow-hidden group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
         >
           <!-- Project Screenshot -->
           <div class="h-48 relative overflow-hidden bg-dark-lighter">
