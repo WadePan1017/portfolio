@@ -35,7 +35,7 @@ onMounted(() => {
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-      <div class="mb-8">
+      <div class="mb-12">
         <span class="inline-block px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-primary-light text-sm font-medium tracking-wide">
           欢迎来到我的个人空间
         </span>
