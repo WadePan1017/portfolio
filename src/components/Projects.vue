@@ -6,13 +6,14 @@ import screenshotFurniture from '../assets/project-furniture.png'
 const projects = [
   {
     title: 'AI 工具导航站',
-    description: '收录 50 余个优质 AI 工具，支持分类筛选和实时搜索。涵盖聊天对话、图像生成、视频生成、编程开发等 8 个分类。',
+    description: '为解决 AI 工具信息分散、难以查找的问题，独立设计并开发了一款工具导航网站。',
     tags: ['Vue3', 'Tailwind CSS', 'Vite', 'Pinia'],
     highlights: [
-      '组件化架构：ToolCard、SearchBar、CategoryTabs 独立封装',
-      '数据驱动：工具数据与展示逻辑分离，便于扩展维护',
-      '实时搜索：输入即过滤，支持名称和分类匹配',
-      '响应式适配：Tailwind 断点覆盖全设备尺寸',
+      '收录 50+ 工具，按 8 个分类组织（聊天、图像、视频、编程等）',
+      '采用组件化架构：ToolCard / SearchBar / CategoryTabs 独立封装，数据与视图分离',
+      '实现输入即搜索，支持工具名称和标签双重匹配',
+      '响应式适配 320px-1920px 全设备，Tailwind 断点覆盖',
+      '部署至 GitHub Pages，访问量稳定增长',
     ],
     demo: 'https://WadePan1017.github.io/ai-tools-site/',
     github: 'https://github.com/WadePan1017/ai-tools-site',
@@ -20,13 +21,13 @@ const projects = [
   },
   {
     title: '个人作品集网站',
-    description: '深色主题响应式设计，展示个人信息、技能栈和项目经历。极光紫配色，视觉层次分明。',
+    description: '为求职打造的个人展示站点，通过深色主题与极光紫配色建立视觉辨识度。',
     tags: ['Vue3', 'Tailwind CSS', '响应式', '动画'],
     highlights: [
-      '极光紫主题：渐变光晕 + 卡片发光边框设计',
-      '组件化开发：7 个独立组件，职责清晰',
-      '打字机效果：Hero 区动态标题展示',
-      '平滑滚动：锚点导航 + 平滑滚动交互',
+      '设计极光紫主题系统：渐变光晕、发光卡片边框、自定义滚动条',
+      '拆分为 8 个独立组件（Hero / Timeline / About / Skills 等），职责清晰',
+      '实现 Hero 区打字机动画 + 锚点平滑滚动交互',
+      '完成移动端适配，导航折叠、触控交互正常',
     ],
     demo: 'https://WadePan1017.github.io/portfolio/',
     github: 'https://github.com/WadePan1017/portfolio',
@@ -34,13 +35,13 @@ const projects = [
   },
   {
     title: '上海非凡大师家居',
-    description: '为家居公司开发的品牌展示网站，包含产品展示、案例介绍和在线咨询功能。已上线运营。',
+    description: '为家居企业独立交付的品牌展示网站，从需求对接到上线运营全程负责。',
     tags: ['企业站', '响应式', '上线运营'],
     highlights: [
-      '真实业务：为实际企业开发，已上线运营使用',
-      '产品展示：商品分类、详情展示完整流程',
-      '响应式设计：适配 PC、平板、手机多端',
-      '在线咨询：集成客服咨询功能',
+      '与客户沟通需求，独立完成页面设计与前端开发',
+      '实现产品分类展示、详情页、案例介绍等完整页面',
+      '响应式适配 PC / 平板 / 手机，确保多端体验一致',
+      '集成在线咨询功能，网站已正式上线运营',
     ],
     demo: 'http://www.topr8.cn/',
     github: 'https://github.com/WadePan1017',
@@ -56,7 +57,7 @@ const projects = [
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
           项目展示
         </h2>
-        <p class="text-gray text-lg">我开发的部分项目</p>
+        <p class="text-gray text-lg">我独立开发的部分项目</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

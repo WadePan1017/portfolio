@@ -76,15 +76,6 @@ body {
   background-clip: text;
 }
 
-/* 进度条动画 */
-@keyframes progress-fill {
-  from { width: 0; }
-}
-
-.progress-bar {
-  animation: progress-fill 1.5s ease-out;
-}
-
 /* 淡入动画 */
 @keyframes fade-in-up {
   from {
