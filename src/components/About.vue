@@ -2,9 +2,9 @@
 import avatar from '../assets/avatar.png'
 
 const highlights = [
-  { number: '5+', label: '完成项目' },
-  { number: '2', label: '商业客户' },
-  { number: '50+', label: 'AI 工具收录' },
+  { number: '3 个', label: '上线运营网站' },
+  { number: '前 5%', label: '本科专业排名' },
+  { number: '2 年', label: '摄影行业经验' },
 ]
 </script>
 
@@ -36,14 +36,13 @@ const highlights = [
         <div>
           <h3 class="text-2xl font-semibold text-white mb-5">Wade Pan / 潘伟东</h3>
           <p class="text-gray-light mb-5 leading-relaxed">
-            我是一名兼具前端开发与视觉创作能力的应届毕业生。在前端方面，我掌握
-            HTML、CSS、JavaScript 和 Vue 框架，能够独立完成响应式网站的开发；
-            在视觉方面，我擅长摄影摄像和视频剪辑，能用 Premiere Pro 和 Photoshop
-            完成从素材采集到成片的完整流程。
+            我是一名兼具前端开发与视觉创作能力的应届毕业生。掌握 Vue3 全家桶，能够独立完成
+            从品牌官网到后台管理系统的全流程开发。同时擅长摄影摄像与视频剪辑，
+            能用 Premiere Pro 和 After Effects 完成从素材采集到成片的完整流程。
           </p>
           <p class="text-gray mb-10 leading-relaxed">
-            我相信技术与审美的结合能创造出更好的产品体验。我正在寻找一个前端开发岗位，
-            期待能将我的跨领域技能发挥到工作中，与团队一起打造优秀的产品。
+            军旅经历培养了我的执行力与抗压能力，摄影训练了我的审美与构图sense。
+            我相信技术与审美的结合能创造出更好的产品体验，期待在前端开发岗位上发挥跨领域优势。
           </p>
 
           <!-- Stats -->

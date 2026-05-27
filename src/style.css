@@ -20,6 +20,10 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* 滚动条 */
 ::-webkit-scrollbar {
   width: 6px;

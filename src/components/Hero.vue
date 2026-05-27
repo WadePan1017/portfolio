@@ -50,10 +50,28 @@ onMounted(() => {
         {{ title }}<span :class="['text-primary', showCursor ? 'opacity-100' : 'opacity-0']">|</span>
       </div>
 
-      <p class="text-gray max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
+      <p class="text-gray max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
         热爱前端开发与视觉创作，擅长将设计转化为用户体验。<br class="hidden md:block">
         同时具备摄影摄像与视频剪辑能力。
       </p>
+
+      <!-- Key Stats -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <div class="text-center">
+          <div class="text-2xl font-bold gradient-text">3</div>
+          <div class="text-xs text-gray mt-1">上线运营网站</div>
+        </div>
+        <div class="w-px bg-dark-border hidden sm:block"></div>
+        <div class="text-center">
+          <div class="text-2xl font-bold gradient-text">2 年</div>
+          <div class="text-xs text-gray mt-1">摄影行业经验</div>
+        </div>
+        <div class="w-px bg-dark-border hidden sm:block"></div>
+        <div class="text-center">
+          <div class="text-2xl font-bold gradient-text">前 5%</div>
+          <div class="text-xs text-gray mt-1">本科专业排名</div>
+        </div>
+      </div>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

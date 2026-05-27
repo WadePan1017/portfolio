@@ -4,40 +4,39 @@ const skillCategories = [
     title: '前端开发',
     icon: '🌐',
     skills: [
-      { name: 'HTML5', desc: '语义化标签、无障碍访问' },
-      { name: 'CSS3', desc: 'Flex/Grid 布局、动画、响应式' },
-      { name: 'JavaScript', desc: 'ES6+、异步编程、DOM 操作' },
-      { name: 'Vue 3', desc: 'Composition API、组件封装、Pinia' },
-      { name: 'Tailwind CSS', desc: '原子化样式、自定义主题' },
-      { name: 'Git', desc: '分支管理、PR 工作流' },
+      { name: 'HTML5', level: 90 },
+      { name: 'CSS3', level: 85 },
+      { name: 'JavaScript', level: 80 },
+      { name: 'Vue 3', level: 85 },
+      { name: 'Tailwind CSS', level: 80 },
+      { name: 'TypeScript', level: 65 },
     ]
   },
   {
     title: '视觉创作',
     icon: '🎬',
     skills: [
-      { name: 'Premiere Pro', desc: '剪辑调色、多轨合成' },
-      { name: 'After Effects', desc: '动态视觉、特效制作' },
-      { name: 'Photoshop', desc: '修图合成、UI 素材处理' },
-      { name: '摄影摄像', desc: '产品拍摄、场景构图' },
-      { name: '视频剪辑', desc: '从素材到成片的完整流程' },
+      { name: 'Premiere Pro', level: 85 },
+      { name: 'After Effects', level: 70 },
+      { name: 'Photoshop', level: 75 },
+      { name: '摄影摄像', level: 85 },
     ]
   },
   {
     title: '其他能力',
     icon: '💪',
     skills: [
-      { name: '响应式设计', desc: '移动端优先、断点适配' },
-      { name: '组件化开发', desc: '可复用组件、职责分离' },
-      { name: '审美与设计', desc: '色彩搭配、排版布局' },
-      { name: '团队协作', desc: '需求沟通、进度同步' },
+      { name: 'Git', level: 80 },
+      { name: '响应式设计', level: 85 },
+      { name: 'Node.js', level: 60 },
+      { name: 'Docker', level: 55 },
     ]
   },
 ]
 </script>
 
 <template>
-  <section id="skills" class="py-24 px-6 bg-dark-light/30">
+  <section id="skills" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -59,10 +58,16 @@ const skillCategories = [
 
           <div class="space-y-4">
             <div v-for="skill in category.skills" :key="skill.name">
-              <div class="flex items-center gap-2 mb-1">
+              <div class="flex items-center justify-between mb-1.5">
                 <span class="text-white text-sm font-medium">{{ skill.name }}</span>
+                <span class="text-gray text-xs">{{ skill.level }}%</span>
               </div>
-              <p class="text-gray text-xs leading-relaxed">{{ skill.desc }}</p>
+              <div class="h-1.5 bg-dark-lighter rounded-full overflow-hidden">
+                <div
+                  class="h-full rounded-full bg-gradient-to-r from-primary to-primary-light transition-all duration-1000"
+                  :style="{ width: skill.level + '%' }"
+                ></div>
+              </div>
             </div>
           </div>
         </div>

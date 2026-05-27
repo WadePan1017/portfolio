@@ -103,6 +103,7 @@ const projects = [
             <img
               :src="project.screenshot"
               :alt="project.title + ' 截图'"
+              loading="lazy"
               class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-dark-light/60 to-transparent"></div>

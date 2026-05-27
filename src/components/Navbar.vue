@@ -8,7 +8,7 @@ const navItems = [
   { name: '关于我', href: '#about' },
   { name: '技能', href: '#skills' },
   { name: '项目', href: '#projects' },
-  { name: '接单服务', href: '#services' },
+  { name: '能力范围', href: '#services' },
   { name: '联系', href: '#contact' },
 ]
 
