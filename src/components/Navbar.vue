@@ -8,6 +8,7 @@ const navItems = [
   { name: '关于我', href: '#about' },
   { name: '技能', href: '#skills' },
   { name: '项目', href: '#projects' },
+  { name: '作品集', href: '/portfolio/portfolio.html', external: true },
   { name: '能力范围', href: '#services' },
   { name: '联系', href: '#contact' },
 ]
@@ -16,6 +17,15 @@ function scrollTo(href) {
   isMenuOpen.value = false
   const el = document.querySelector(href)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
+function navigateTo(item) {
+  isMenuOpen.value = false
+  if (item.external) {
+    window.location.href = item.href
+  } else {
+    scrollTo(item.href)
+  }
 }
 </script>
 
@@ -33,7 +43,7 @@ function scrollTo(href) {
           :key="item.name"
           :href="item.href"
           class="text-gray hover:text-white transition-colors text-sm"
-          @click.prevent="scrollTo(item.href)"
+          @click.prevent="navigateTo(item)"
         >
           {{ item.name }}
         </a>
@@ -82,7 +92,7 @@ function scrollTo(href) {
         :key="item.name"
         :href="item.href"
         class="block px-6 py-3 text-gray hover:text-white hover:bg-dark-lighter transition-colors"
-        @click.prevent="scrollTo(item.href)"
+        @click.prevent="navigateTo(item)"
       >
         {{ item.name }}
       </a>

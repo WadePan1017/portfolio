@@ -1,36 +1,22 @@
 <script setup>
-const skillCategories = [
+const skillGroups = [
   {
     title: '前端开发',
     icon: '🌐',
-    skills: [
-      { name: 'HTML5', level: 90 },
-      { name: 'CSS3', level: 85 },
-      { name: 'JavaScript', level: 80 },
-      { name: 'Vue 3', level: 85 },
-      { name: 'Tailwind CSS', level: 80 },
-      { name: 'TypeScript', level: 65 },
-    ]
+    description: '能独立完成从品牌官网到后台管理系统的全流程开发',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Vue 3', 'TypeScript', 'Tailwind CSS', 'Element Plus', 'Pinia'],
   },
   {
     title: '视觉创作',
     icon: '🎬',
-    skills: [
-      { name: 'Premiere Pro', level: 85 },
-      { name: 'After Effects', level: 70 },
-      { name: 'Photoshop', level: 75 },
-      { name: '摄影摄像', level: 85 },
-    ]
+    description: '从素材采集到成片交付的完整视频制作流程',
+    tags: ['Premiere Pro', 'After Effects', 'Photoshop', '摄影摄像', '视频剪辑', '调色包装'],
   },
   {
-    title: '其他能力',
-    icon: '💪',
-    skills: [
-      { name: 'Git', level: 80 },
-      { name: '响应式设计', level: 85 },
-      { name: 'Node.js', level: 60 },
-      { name: 'Docker', level: 55 },
-    ]
+    title: '工程化',
+    icon: '🛠',
+    description: '熟悉现代前端工程化工具链，能独立部署上线',
+    tags: ['Git', 'Vite', 'Docker', 'Node.js', 'GitHub Pages', 'Railway', 'npm'],
   },
 ]
 </script>
@@ -47,28 +33,25 @@ const skillCategories = [
 
       <div class="grid md:grid-cols-3 gap-8">
         <div
-          v-for="category in skillCategories"
-          :key="category.title"
+          v-for="group in skillGroups"
+          :key="group.title"
           class="glow-card p-6"
         >
-          <div class="flex items-center gap-3 mb-6">
-            <span class="text-2xl">{{ category.icon }}</span>
-            <h3 class="text-xl font-semibold text-white">{{ category.title }}</h3>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">{{ group.icon }}</span>
+            <h3 class="text-xl font-semibold text-white">{{ group.title }}</h3>
           </div>
 
-          <div class="space-y-4">
-            <div v-for="skill in category.skills" :key="skill.name">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="text-white text-sm font-medium">{{ skill.name }}</span>
-                <span class="text-gray text-xs">{{ skill.level }}%</span>
-              </div>
-              <div class="h-1.5 bg-dark-lighter rounded-full overflow-hidden">
-                <div
-                  class="h-full rounded-full bg-gradient-to-r from-primary to-primary-light transition-all duration-1000"
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
-            </div>
+          <p class="text-gray text-sm mb-5 leading-relaxed">{{ group.description }}</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span
+              v-for="tag in group.tags"
+              :key="tag"
+              class="px-3 py-1.5 bg-primary/8 text-primary-light text-xs rounded-full border border-primary/10"
+            >
+              {{ tag }}
+            </span>
           </div>
         </div>
       </div>
