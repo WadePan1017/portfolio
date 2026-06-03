@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>栖木空间设计 | 让家更有温度</title>
+  <meta name="description" content="栖木空间设计，专注新房装修、旧房翻新、全屋定制。10年经验，500+案例，让每一个家都值得期待。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warm: { 50: '#fdfcfa', 100: '#f9f6f1', 200: '#f0ebe0', 300: '#e2d9c8', 400: '#c4b49a', 500: '#a69372', 600: '#8b7a5e', 700: '#6d5f4a', 800: '#4a4035', 900: '#2d2821' },
+            wood: { DEFAULT: '#a69372', light: '#c4b49a', dark: '#8b7a5e' },
+          },
+          fontFamily: {
+            serif: ['Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif; background: #fdfcfa; color: #4a4035; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .wood-gradient { background: linear-gradient(135deg, #a69372, #c4b49a, #8b7a5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-bg { background: linear-gradient(180deg, rgba(45,40,33,0.1) 0%, rgba(45,40,33,0.55) 50%, rgba(45,40,33,0.92) 100%), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80') center/cover no-repeat; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #fdfcfa; }
+    ::-webkit-scrollbar-thumb { background: #e2d9c8; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #a69372; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body class="bg-warm-50">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-warm-50/80 backdrop-blur-md border-b border-warm-300/50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl text-warm-800 tracking-widest">栖木空间设计</a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-warm-600">
+        <a href="#services" class="hover:text-wood transition-colors">服务类型</a>
+        <a href="#cases" class="hover:text-wood transition-colors">装修案例</a>
+        <a href="#team" class="hover:text-wood transition-colors">设计团队</a>
+        <a href="#process" class="hover:text-wood transition-colors">服务流程</a>
+        <a href="#contact" class="hover:text-wood transition-colors">联系我们</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-wood/10 border border-wood/30 text-wood rounded-full text-sm hover:bg-wood/20 transition-colors">免费报价</a>
+      <button id="menuBtn" class="md:hidden text-warm-600 hover:text-wood">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-warm-100 border-t border-warm-300">
+      <a href="#services" class="block px-6 py-3 text-warm-600 hover:text-wood hover:bg-warm-200 transition-colors text-sm mobile-link">服务类型</a>
+      <a href="#cases" class="block px-6 py-3 text-warm-600 hover:text-wood hover:bg-warm-200 transition-colors text-sm mobile-link">装修案例</a>
+      <a href="#team" class="block px-6 py-3 text-warm-600 hover:text-wood hover:bg-warm-200 transition-colors text-sm mobile-link">设计团队</a>
+      <a href="#process" class="block px-6 py-3 text-warm-600 hover:text-wood hover:bg-warm-200 transition-colors text-sm mobile-link">服务流程</a>
+      <a href="#contact" class="block px-6 py-3 text-warm-600 hover:text-wood hover:bg-warm-200 transition-colors text-sm mobile-link">联系我们</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center justify-center relative">
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <p class="text-wood-light text-sm tracking-[0.2em] uppercase mb-6 font-light">Interior Design Studio</p>
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
+        让家<br><span class="wood-gradient">更有温度</span>
+      </h1>
+      <p class="text-warm-300 text-lg md:text-xl mb-10 leading-relaxed font-light">
+        专注新房装修、旧房翻新、全屋定制<br>10年经验，500+案例，用心设计每一个空间
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="px-8 py-3.5 bg-wood text-white font-medium rounded-full hover:bg-wood-dark transition-colors">免费获取报价</a>
+        <a href="#cases" class="px-8 py-3.5 border border-white/30 text-white rounded-full hover:bg-white/10 transition-colors">查看装修案例</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">ABOUT US</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-6">关于栖木</h2>
+        <p class="text-warm-600 leading-relaxed mb-6">
+          栖木空间设计成立于2015年，是一家专注于住宅与商业空间设计的本土设计公司。我们相信，好的设计不只是好看，更是让居住者感到舒适和幸福。
+        </p>
+        <p class="text-warm-600 leading-relaxed mb-6">
+          从毛坯房到精装交付，从旧房翻新到全屋定制，我们用专业的设计能力和扎实的施工管理，为每一位业主打造理想的家。
+        </p>
+        <p class="text-warm-600 leading-relaxed mb-8">
+          我们坚持使用环保材料，拒绝偷工减料。每一个工地都严格按标准施工，每一个细节都经得起检验。
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="text-center p-3 bg-warm-100 rounded-xl">
+            <div class="text-xl font-bold wood-gradient">10年</div>
+            <div class="text-warm-500 text-xs mt-1">行业经验</div>
+          </div>
+          <div class="text-center p-3 bg-warm-100 rounded-xl">
+            <div class="text-xl font-bold wood-gradient">500+</div>
+            <div class="text-warm-500 text-xs mt-1">装修案例</div>
+          </div>
+          <div class="text-center p-3 bg-warm-100 rounded-xl">
+            <div class="text-xl font-bold wood-gradient">98%</div>
+            <div class="text-warm-500 text-xs mt-1">客户满意度</div>
+          </div>
+          <div class="text-center p-3 bg-warm-100 rounded-xl">
+            <div class="text-xl font-bold wood-gradient">本地</div>
+            <div class="text-warm-500 text-xs mt-1">服务团队</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="装修设计" class="rounded-2xl w-full object-cover shadow-lg" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 px-6 bg-warm-100/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">SERVICES</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">服务类型</h2>
+        <p class="text-warm-500">覆盖住宅与商业空间全场景</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">新房装修</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">毛坯房全案设计与施工，从设计到拎包入住，一站式服务。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">旧房翻新</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">老旧房屋改造升级，功能重新规划，让旧房焕发新生。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">全屋定制</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">衣柜、橱柜、鞋柜等全屋柜体定制，空间利用最大化。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">商业空间</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">办公室、店铺、咖啡厅等商业空间设计与施工。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">软装设计</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">家具、窗帘、灯具、饰品搭配，打造完整空间氛围。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 hover:border-wood/30 transition-all card-hover fade-in">
+          <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-2">局部改造</h3>
+          <p class="text-warm-500 text-sm leading-relaxed">厨房翻新、卫生间改造、阳台改造等局部空间升级。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section id="cases" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">PORTFOLIO</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">装修案例</h2>
+        <p class="text-warm-500">每一个家，都是独一无二的作品</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">现代简约</span>
+              <span class="text-warm-400 text-xs">120m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">阳光花园 3室2厅</h3>
+            <p class="text-warm-500 text-sm">全屋定制 + 软装搭配，预算 25-30万</p>
+          </div>
+        </div>
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7f34b5f20c4?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">奶油风</span>
+              <span class="text-warm-400 text-xs">95m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">悦府 2室2厅</h3>
+            <p class="text-warm-500 text-sm">全案设计 + 施工，预算 18-22万</p>
+          </div>
+        </div>
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">原木风</span>
+              <span class="text-warm-400 text-xs">85m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">翠苑 2室1厅</h3>
+            <p class="text-warm-500 text-sm">旧房翻新 + 全屋定制，预算 15-18万</p>
+          </div>
+        </div>
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">轻奢风</span>
+              <span class="text-warm-400 text-xs">150m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">绿城别墅 4室2厅</h3>
+            <p class="text-warm-500 text-sm">全案设计 + 软装，预算 50-60万</p>
+          </div>
+        </div>
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">办公空间</span>
+              <span class="text-warm-400 text-xs">300m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">科技公司办公室</h3>
+            <p class="text-warm-500 text-sm">商业空间设计 + 施工，预算 40-50万</p>
+          </div>
+        </div>
+        <div class="bg-warm-100 rounded-2xl overflow-hidden card-hover fade-in">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&q=80" alt="装修案例" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-wood/10 text-wood text-xs rounded-full">日式</span>
+              <span class="text-warm-400 text-xs">75m²</span>
+            </div>
+            <h3 class="text-warm-900 font-semibold mb-1">乐堤港 1室1厅</h3>
+            <p class="text-warm-500 text-sm">旧房翻新 + 局部改造，预算 10-12万</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="py-24 px-6 bg-warm-100/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">DESIGNERS</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">设计团队</h2>
+        <p class="text-warm-500">每一位设计师，都是空间的造梦者</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="w-20 h-20 rounded-full bg-warm-200 mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="设计师" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-1">林栖木</h3>
+          <p class="text-wood text-xs mb-2">创始人 / 设计总监</p>
+          <p class="text-warm-500 text-xs leading-relaxed">从业15年<br>擅长：现代简约、日式<br>作品多次获奖</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="w-20 h-20 rounded-full bg-warm-200 mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="设计师" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-1">苏晓彤</h3>
+          <p class="text-wood text-xs mb-2">首席设计师</p>
+          <p class="text-warm-500 text-xs leading-relaxed">从业10年<br>擅长：奶油风、轻奢<br>住宅设计专家</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="w-20 h-20 rounded-full bg-warm-200 mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="设计师" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-1">陈一凡</h3>
+          <p class="text-wood text-xs mb-2">资深设计师</p>
+          <p class="text-warm-500 text-xs leading-relaxed">从业8年<br>擅长：原木风、北欧<br>商业空间设计</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="w-20 h-20 rounded-full bg-warm-200 mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="设计师" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-warm-900 font-semibold mb-1">周安然</h3>
+          <p class="text-wood text-xs mb-2">软装设计师</p>
+          <p class="text-warm-500 text-xs leading-relaxed">从业6年<br>擅长：软装搭配、色彩<br>全屋定制顾问</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">PROCESS</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">服务流程</h2>
+        <p class="text-warm-500">从量房到入住，全程透明可控</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">01</div>
+          <h3 class="text-warm-900 font-semibold mb-2">预约量房</h3>
+          <p class="text-warm-500 text-sm">免费上门量房，了解户型特点和业主需求。</p>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">02</div>
+          <h3 class="text-warm-900 font-semibold mb-2">设计方案</h3>
+          <p class="text-warm-500 text-sm">出具平面方案 + 效果图，满意后进入下一步。</p>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">03</div>
+          <h3 class="text-warm-900 font-semibold mb-2">报价确认</h3>
+          <p class="text-warm-500 text-sm">详细报价清单，透明无增项，确认后签约。</p>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">04</div>
+          <h3 class="text-warm-900 font-semibold mb-2">施工管理</h3>
+          <p class="text-warm-500 text-sm">项目经理全程跟进，每周进度汇报，可随时查看。</p>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">05</div>
+          <h3 class="text-warm-900 font-semibold mb-2">竣工验收</h3>
+          <p class="text-warm-500 text-sm">逐项验收，不合格免费整改，满意后签字确认。</p>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="text-3xl font-bold wood-gradient mb-3">06</div>
+          <h3 class="text-warm-900 font-semibold mb-2">售后保障</h3>
+          <p class="text-warm-500 text-sm">隐蔽工程5年质保，表面工程2年质保，终身维护。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section class="py-24 px-6 bg-warm-100/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">QUALITY</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">材料与工艺</h2>
+        <p class="text-warm-500">用好材料，做好工程</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="text-3xl mb-3">🌿</div>
+          <h3 class="text-warm-900 font-semibold mb-2">环保材料</h3>
+          <p class="text-warm-500 text-sm">E0级板材，品牌乳胶漆，从源头保障健康。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="text-3xl mb-3">🔧</div>
+          <h3 class="text-warm-900 font-semibold mb-2">标准施工</h3>
+          <p class="text-warm-500 text-sm">严格按工艺标准执行，每道工序层层验收。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="text-warm-900 font-semibold mb-2">水电工程</h3>
+          <p class="text-warm-500 text-sm">品牌管材电线，走线规范，质保5年。</p>
+        </div>
+        <div class="bg-white border border-warm-200 rounded-2xl p-6 text-center card-hover fade-in">
+          <div class="text-3xl mb-3">✅</div>
+          <h3 class="text-warm-900 font-semibold mb-2">质检验收</h3>
+          <p class="text-warm-500 text-sm">第三方质检验收，出具检测报告，可溯源。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">REVIEWS</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">业主评价</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span>
+          </div>
+          <p class="text-warm-600 text-sm leading-relaxed mb-4">"从设计到施工都很满意！设计师很耐心，改了好几版方案。施工队也很负责，最后效果比效果图还好看。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-wood/20 flex items-center justify-center text-wood text-sm font-medium">陈</div>
+            <div>
+              <div class="text-warm-900 text-sm font-medium">陈先生</div>
+              <div class="text-warm-500 text-xs">阳光花园 · 120m² · 现代简约</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span>
+          </div>
+          <p class="text-warm-600 text-sm leading-relaxed mb-4">"旧房翻新选的栖木，整个过程很省心。报价透明没有增项，工期也准时。邻居看到都来问在哪找的。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-wood/20 flex items-center justify-center text-wood text-sm font-medium">王</div>
+            <div>
+              <div class="text-warm-900 text-sm font-medium">王女士</div>
+              <div class="text-warm-500 text-xs">翠苑 · 85m² · 原木风</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-warm-100 border border-warm-200 rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span><span class="text-wood">&#9733;</span>
+          </div>
+          <p class="text-warm-600 text-sm leading-relaxed mb-4">"办公室装修找的他们，300平只用了40天就交付了。设计很现代，员工都说环境好了工作心情都不一样。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-wood/20 flex items-center justify-center text-wood text-sm font-medium">李</div>
+            <div>
+              <div class="text-warm-900 text-sm font-medium">李总</div>
+              <div class="text-warm-500 text-xs">科技公司 · 300m² · 办公空间</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 bg-warm-100/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-wood text-sm tracking-widest mb-4">CONTACT</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 mb-4">免费获取报价</h2>
+        <p class="text-warm-500">填写信息，24小时内为您出方案</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <!-- Form -->
+        <div class="bg-white border border-warm-200 rounded-2xl p-8 fade-in">
+          <h3 class="text-warm-900 font-semibold mb-6">在线报价</h3>
+          <form class="space-y-4">
+            <input type="text" placeholder="您的姓名" class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-900 text-sm placeholder-warm-400 focus:border-wood/50 focus:outline-none transition-colors">
+            <input type="tel" placeholder="联系电话" class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-900 text-sm placeholder-warm-400 focus:border-wood/50 focus:outline-none transition-colors">
+            <input type="text" placeholder="房屋面积（m²）" class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-900 text-sm placeholder-warm-400 focus:border-wood/50 focus:outline-none transition-colors">
+            <select class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-500 text-sm focus:border-wood/50 focus:outline-none transition-colors">
+              <option>装修类型</option>
+              <option>新房装修</option>
+              <option>旧房翻新</option>
+              <option>全屋定制</option>
+              <option>商业空间</option>
+              <option>局部改造</option>
+            </select>
+            <select class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-500 text-sm focus:border-wood/50 focus:outline-none transition-colors">
+              <option>预算范围</option>
+              <option>10万以下</option>
+              <option>10-20万</option>
+              <option>20-30万</option>
+              <option>30-50万</option>
+              <option>50万以上</option>
+            </select>
+            <textarea placeholder="补充说明（选填）" rows="3" class="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-warm-900 text-sm placeholder-warm-400 focus:border-wood/50 focus:outline-none transition-colors resize-none"></textarea>
+            <button type="button" class="w-full py-3 bg-wood text-white font-medium rounded-full hover:bg-wood-dark transition-colors">获取免费报价</button>
+            <p class="text-warm-400 text-xs text-center mt-2">提交后 24 小时内联系您 · 信息严格保密，仅用于报价服务</p>
+          </form>
+        </div>
+        <!-- Info -->
+        <div class="flex flex-col gap-6 fade-in">
+          <div class="bg-white border border-warm-200 rounded-2xl p-6">
+            <h3 class="text-warm-900 font-medium mb-4">联系我们</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-wood/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <div class="text-warm-900 text-sm">138-0000-0000</div>
+                  <div class="text-warm-500 text-xs">咨询热线（微信同号）</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-wood/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-warm-900 text-sm">XX市XX区XX路300号</div>
+                  <div class="text-warm-500 text-xs">栖木设计体验馆 2楼</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-wood/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-warm-900 text-sm">周一至周日 9:00 - 20:00</div>
+                  <div class="text-warm-500 text-xs">可预约晚间咨询</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border border-warm-200 rounded-2xl p-6">
+            <h3 class="text-warm-900 font-medium mb-3">为什么选栖木</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-warm-600"><span class="text-wood mt-0.5">&#10003;</span>报价透明，零增项承诺</li>
+              <li class="flex items-start gap-2 text-sm text-warm-600"><span class="text-wood mt-0.5">&#10003;</span>自有施工团队，不转包</li>
+              <li class="flex items-start gap-2 text-sm text-warm-600"><span class="text-wood mt-0.5">&#10003;</span>环保材料，甲醛达标</li>
+              <li class="flex items-start gap-2 text-sm text-warm-600"><span class="text-wood mt-0.5">&#10003;</span>隐蔽工程质保5年</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-warm-200 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="font-serif text-warm-800 tracking-widest mb-2">栖木空间设计</p>
+      <p class="text-warm-400 text-xs">&copy; 2026 栖木空间设计 All Rights Reserved. Powered by Wade Studio</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
+    });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

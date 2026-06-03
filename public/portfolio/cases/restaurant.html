@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>味觉研究所 | 创意融合料理</title>
+  <meta name="description" content="味觉研究所，专注创意融合料理。用味蕾探索世界，每一口都是惊喜。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { DEFAULT: '#0c0a09', light: '#1c1917', lighter: '#292524', border: '#44403c' },
+            amber: { DEFAULT: '#f59e0b', light: '#fbbf24', dark: '#d97706' },
+            warm: '#fef3c7',
+          },
+          fontFamily: {
+            serif: ['Noto Serif SC', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0c0a09; color: #d6d3d1; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .amber-gradient { background: linear-gradient(135deg, #f59e0b, #fbbf24, #d97706); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-bg { background: linear-gradient(180deg, rgba(12,10,9,0) 0%, rgba(12,10,9,0.5) 40%, rgba(12,10,9,0.95) 100%), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80') center/cover no-repeat; }
+    .menu-item:hover .menu-img { transform: scale(1.08); }
+    .menu-img { transition: transform 0.6s ease; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0c0a09; }
+    ::-webkit-scrollbar-thumb { background: #44403c; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-dark-border/50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl text-amber tracking-widest">味觉研究所</a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-stone-400">
+        <a href="#story" class="hover:text-amber transition-colors">品牌故事</a>
+        <a href="#dishes" class="hover:text-amber transition-colors">招牌菜品</a>
+        <a href="#environment" class="hover:text-amber transition-colors">门店环境</a>
+        <a href="#menu" class="hover:text-amber transition-colors">菜单</a>
+        <a href="#contact" class="hover:text-amber transition-colors">联系我们</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-amber/10 border border-amber/30 text-amber rounded-full text-sm hover:bg-amber/20 transition-colors">立即预约</a>
+      <button id="menuBtn" class="md:hidden text-stone-400 hover:text-amber">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-dark-light border-t border-dark-border">
+      <a href="#story" class="block px-6 py-3 text-stone-400 hover:text-amber hover:bg-dark-lighter transition-colors text-sm mobile-link">品牌故事</a>
+      <a href="#dishes" class="block px-6 py-3 text-stone-400 hover:text-amber hover:bg-dark-lighter transition-colors text-sm mobile-link">招牌菜品</a>
+      <a href="#environment" class="block px-6 py-3 text-stone-400 hover:text-amber hover:bg-dark-lighter transition-colors text-sm mobile-link">门店环境</a>
+      <a href="#menu" class="block px-6 py-3 text-stone-400 hover:text-amber hover:bg-dark-lighter transition-colors text-sm mobile-link">菜单</a>
+      <a href="#contact" class="block px-6 py-3 text-stone-400 hover:text-amber hover:bg-dark-lighter transition-colors text-sm mobile-link">联系我们</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center justify-center relative">
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <p class="text-amber/80 text-sm tracking-[0.3em] uppercase mb-6 font-light">Creative Fusion Cuisine</p>
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
+        味觉<br><span class="amber-gradient">研究所</span>
+      </h1>
+      <p class="text-stone-400 text-lg md:text-xl mb-10 leading-relaxed font-light">
+        用味蕾探索世界，每一口都是惊喜<br>创意融合料理，唤醒你的味觉记忆
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#menu" class="px-8 py-3.5 bg-amber text-dark font-medium rounded-full hover:bg-amber-light transition-colors">查看菜单</a>
+        <a href="#contact" class="px-8 py-3.5 border border-amber/40 text-amber rounded-full hover:bg-amber/10 transition-colors">立即预约</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-amber/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section id="story" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">OUR STORY</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-6">品牌故事</h2>
+        <p class="text-stone-400 leading-relaxed mb-6">
+          味觉研究所诞生于对美食的无限热爱。我们相信，好的料理不只是填饱肚子，更是一场味觉的冒险。
+        </p>
+        <p class="text-stone-400 leading-relaxed mb-6">
+          主厨游历多国，将日式精致、法式浪漫、东南亚热情融为一体，创造出独一无二的融合料理。每一道菜，都是一次跨越国界的味觉旅行。
+        </p>
+        <p class="text-stone-400 leading-relaxed mb-8">
+          我们坚持使用新鲜食材，拒绝预制料包。从农场到餐桌，每一步都用心把控。
+        </p>
+        <div class="flex gap-8">
+          <div>
+            <div class="text-2xl font-bold amber-gradient">8 年</div>
+            <div class="text-stone-500 text-xs mt-1">餐饮经验</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold amber-gradient">50+</div>
+            <div class="text-stone-500 text-xs mt-1">创意菜品</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold amber-gradient">4.9</div>
+            <div class="text-stone-500 text-xs mt-1">大众点评</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80" alt="品牌故事" class="rounded-2xl w-full object-cover shadow-2xl" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Dishes -->
+  <section id="dishes" class="py-24 px-6 bg-dark-light/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">SIGNATURE DISHES</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">招牌菜品</h2>
+        <p class="text-stone-400">主厨推荐，每一道都值得尝试</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">松露和牛牛排</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥188</span>
+            </div>
+            <p class="text-stone-500 text-sm">澳洲M9和牛配黑松露酱，低温慢煎至完美熟度</p>
+          </div>
+        </div>
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">熔岩芝士披萨</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥88</span>
+            </div>
+            <p class="text-stone-500 text-sm">四种进口芝士融合，手工现烤，拉丝超长</p>
+          </div>
+        </div>
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">日式咖喱蛋包饭</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥58</span>
+            </div>
+            <p class="text-stone-500 text-sm">自制咖喱酱汁，滑嫩蛋皮包裹颗颗分明的米饭</p>
+          </div>
+        </div>
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">焦糖布蕾</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥38</span>
+            </div>
+            <p class="text-stone-500 text-sm">法式经典甜品，表面焦糖脆壳，内里丝滑如绸</p>
+          </div>
+        </div>
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">牛油果藜麦沙拉</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥48</span>
+            </div>
+            <p class="text-stone-500 text-sm">新鲜牛油果配三色藜麦，清爽健康之选</p>
+          </div>
+        </div>
+        <div class="menu-item bg-dark-light border border-dark-border rounded-2xl overflow-hidden hover:border-amber/30 transition-all group fade-in">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="招牌菜品" class="menu-img w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-white font-semibold">抹茶提拉米苏</h3>
+              <span class="text-amber font-bold text-sm shrink-0 ml-3">¥42</span>
+            </div>
+            <p class="text-stone-500 text-sm">日式抹茶与意式经典的完美碰撞</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Environment -->
+  <section id="environment" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">ENVIRONMENT</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">门店环境</h2>
+        <p class="text-stone-400">舒适空间，享受美食时光</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="rounded-xl overflow-hidden group fade-in">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="门店环境" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden group fade-in">
+          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="门店环境" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden group fade-in">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80" alt="门店环境" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden group fade-in md:col-span-2">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="门店环境" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden group fade-in">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="门店环境" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-24 px-6 bg-dark-light/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">MENU</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">精选菜单</h2>
+        <p class="text-stone-400">价格仅供参考，以门店实际为准</p>
+      </div>
+
+      <!-- Category: Main -->
+      <div class="mb-12 fade-in">
+        <h3 class="font-serif text-xl text-amber mb-6 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber/40"></span> 主食
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">松露和牛牛排</div>
+              <div class="text-stone-500 text-sm mt-1">澳洲M9和牛 · 黑松露酱 · 时蔬</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥188</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">熔岩芝士披萨</div>
+              <div class="text-stone-500 text-sm mt-1">四种进口芝士 · 手工饼底</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥88</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">日式咖喱蛋包饭</div>
+              <div class="text-stone-500 text-sm mt-1">自制咖喱 · 滑嫩蛋皮</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥58</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">泰式冬阴功意面</div>
+              <div class="text-stone-500 text-sm mt-1">冬阴功汤底 · 大虾 · 蘑菇</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥68</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category: Salad -->
+      <div class="mb-12 fade-in">
+        <h3 class="font-serif text-xl text-amber mb-6 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber/40"></span> 沙拉 & 小食
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">牛油果藜麦沙拉</div>
+              <div class="text-stone-500 text-sm mt-1">新鲜牛油果 · 三色藜麦 · 柠檬汁</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥48</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">松露薯条</div>
+              <div class="text-stone-500 text-sm mt-1">现炸薯条 · 黑松露酱 · 帕尔马干酪</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥38</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">凯撒沙拉</div>
+              <div class="text-stone-500 text-sm mt-1">罗马生菜 · 鸡胸肉 · 培根碎 · 凯撒酱</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥42</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category: Dessert -->
+      <div class="mb-12 fade-in">
+        <h3 class="font-serif text-xl text-amber mb-6 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber/40"></span> 甜品
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">焦糖布蕾</div>
+              <div class="text-stone-500 text-sm mt-1">法式经典 · 现烤焦糖脆壳</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥38</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">抹茶提拉米苏</div>
+              <div class="text-stone-500 text-sm mt-1">宇治抹茶 · 马斯卡彭奶酪</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥42</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">巧克力熔岩蛋糕</div>
+              <div class="text-stone-500 text-sm mt-1">70%黑巧克力 · 香草冰淇淋</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥45</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category: Drinks -->
+      <div class="fade-in">
+        <h3 class="font-serif text-xl text-amber mb-6 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber/40"></span> 饮品
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">手冲咖啡</div>
+              <div class="text-stone-500 text-sm mt-1">每日精选单品豆</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥35</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">鲜榨果汁</div>
+              <div class="text-stone-500 text-sm mt-1">当季新鲜水果</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥28</span>
+          </div>
+          <div class="flex justify-between items-start py-3 border-b border-dark-border">
+            <div class="flex-1">
+              <div class="text-white font-medium">特调气泡水</div>
+              <div class="text-stone-500 text-sm mt-1">自制糖浆 + 气泡水</div>
+            </div>
+            <span class="text-amber font-bold ml-4 shrink-0">¥25</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">REVIEWS</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">食客评价</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span>
+          </div>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">"环境超棒，氛围感拉满！松露和牛真的绝了，入口即化。服务员也很贴心，会主动加水换盘。下次带朋友来。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center text-amber text-sm font-medium">刘</div>
+            <div>
+              <div class="text-white text-sm font-medium">刘先生</div>
+              <div class="text-stone-500 text-xs">大众点评</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span>
+          </div>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">"约会被女朋友夸了！环境很出片，菜品摆盘精致味道也好。芝士披萨拉丝超长，甜品也很惊艳。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center text-amber text-sm font-medium">赵</div>
+            <div>
+              <div class="text-white text-sm font-medium">赵先生</div>
+              <div class="text-stone-500 text-xs">小红书</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span>
+          </div>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">"周末brunch首选！蛋包饭和沙拉都很好吃，咖啡也不错。价格合理，性价比很高。已经来过三次了。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center text-amber text-sm font-medium">周</div>
+            <div>
+              <div class="text-white text-sm font-medium">周小姐</div>
+              <div class="text-stone-500 text-xs">大众点评</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span><span class="text-amber">&#9733;</span>
+          </div>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">"朋友推荐来的，没有失望！冬阴功意面太有创意了，酸辣开胃。提拉米苏也很特别，抹茶味浓郁。"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center text-amber text-sm font-medium">孙</div>
+            <div>
+              <div class="text-white text-sm font-medium">孙女士</div>
+              <div class="text-stone-500 text-xs">口碑</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 bg-dark-light/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-amber text-sm tracking-widest mb-4">CONTACT</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">到店体验</h2>
+        <p class="text-stone-400">期待您的光临</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 text-center fade-in">
+          <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-white font-medium mb-2">门店地址</h3>
+          <p class="text-stone-400 text-sm">XX市XX区XX路88号<br>商业广场2楼L201</p>
+        </div>
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 text-center fade-in">
+          <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-white font-medium mb-2">营业时间</h3>
+          <p class="text-stone-400 text-sm">周一至周五 11:00 - 22:00<br>周末及节假日 10:00 - 23:00</p>
+        </div>
+        <div class="bg-dark-light border border-dark-border rounded-2xl p-6 text-center fade-in">
+          <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <h3 class="text-white font-medium mb-2">预约电话</h3>
+          <p class="text-stone-400 text-sm">138-0000-0000<br>微信同号</p>
+        </div>
+      </div>
+
+      <!-- Reservation Form -->
+      <div class="mt-12 bg-dark-light border border-dark-border rounded-2xl p-8 fade-in">
+        <h3 class="text-white font-semibold text-center mb-6">在线预约</h3>
+        <form class="grid sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="您的姓名" class="px-4 py-3 bg-dark border border-dark-border rounded-xl text-white text-sm placeholder-stone-500 focus:border-amber/50 focus:outline-none transition-colors">
+          <input type="tel" placeholder="联系电话" class="px-4 py-3 bg-dark border border-dark-border rounded-xl text-white text-sm placeholder-stone-500 focus:border-amber/50 focus:outline-none transition-colors">
+          <input type="date" class="px-4 py-3 bg-dark border border-dark-border rounded-xl text-stone-400 text-sm focus:border-amber/50 focus:outline-none transition-colors">
+          <select class="px-4 py-3 bg-dark border border-dark-border rounded-xl text-stone-400 text-sm focus:border-amber/50 focus:outline-none transition-colors">
+            <option>选择用餐人数</option>
+            <option>1-2人</option>
+            <option>3-4人</option>
+            <option>5-6人</option>
+            <option>7人以上（包间）</option>
+          </select>
+          <textarea placeholder="备注信息（选填）" rows="2" class="sm:col-span-2 px-4 py-3 bg-dark border border-dark-border rounded-xl text-white text-sm placeholder-stone-500 focus:border-amber/50 focus:outline-none transition-colors resize-none"></textarea>
+          <div class="sm:col-span-2 text-center">
+            <button type="button" class="px-8 py-3 bg-amber text-dark font-medium rounded-full hover:bg-amber-light transition-colors">提交预约</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-dark-border">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="font-serif text-amber tracking-widest mb-2">味觉研究所</p>
+      <p class="text-stone-500 text-xs">&copy; 2026 味觉研究所 All Rights Reserved. Powered by Wade Studio</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
+    });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>

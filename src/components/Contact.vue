@@ -4,7 +4,7 @@ import wechatQr from '../assets/wechat-qr.jpg'
 const contactInfo = [
   {
     icon: '📞',
-    label: '电话',
+    label: '电话 / 微信',
     value: '13507943852',
     href: 'tel:13507943852',
   },
@@ -14,11 +14,23 @@ const contactInfo = [
     value: '2455177610@qq.com',
     href: 'mailto:2455177610@qq.com',
   },
+]
+
+const platforms = [
   {
-    icon: '💻',
-    label: 'GitHub',
-    value: 'WadePan1017',
-    href: 'https://github.com/WadePan1017',
+    name: '闲鱼',
+    desc: '搜索「Wade Studio」',
+    icon: '🐟',
+  },
+  {
+    name: '小红书',
+    desc: '搜索「Wade Studio」',
+    icon: '📕',
+  },
+  {
+    name: 'Boss直聘',
+    desc: '搜索「潘伟东」',
+    icon: '💼',
   },
 ]
 </script>
@@ -28,12 +40,12 @@ const contactInfo = [
     <div class="max-w-4xl mx-auto text-center">
       <div class="mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-          联系我
+          联系我们
         </h2>
-        <p class="text-gray text-lg">期待与你交流，欢迎随时联系</p>
+        <p class="text-gray text-lg">期待与你合作，欢迎随时联系</p>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-6 mb-12">
+      <div class="grid sm:grid-cols-2 gap-6 mb-12">
         <div
           v-for="info in contactInfo"
           :key="info.label"
@@ -51,7 +63,25 @@ const contactInfo = [
         </div>
       </div>
 
-      <!-- WeChat QR Code -->
+      <!-- Platforms -->
+      <div class="mb-12">
+        <h3 class="text-xl font-semibold text-white mb-6">也可以在这些平台找到我们</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div
+            v-for="p in platforms"
+            :key="p.name"
+            class="glow-card px-6 py-4 flex items-center gap-3"
+          >
+            <span class="text-2xl">{{ p.icon }}</span>
+            <div class="text-left">
+              <div class="text-white font-medium text-sm">{{ p.name }}</div>
+              <div class="text-gray text-xs">{{ p.desc }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WeChat QR -->
       <div class="glow-card p-8 inline-block">
         <h3 class="text-xl font-semibold text-white mb-4">微信扫码添加</h3>
         <img
@@ -59,7 +89,7 @@ const contactInfo = [
           alt="微信二维码"
           class="w-48 h-48 rounded-lg object-cover mx-auto border border-dark-border"
         />
-        <p class="text-gray text-sm mt-3">扫码添加微信，备注"求职"更快通过</p>
+        <p class="text-gray text-sm mt-3">扫码添加微信，备注"网站需求"更快通过</p>
       </div>
     </div>
   </section>

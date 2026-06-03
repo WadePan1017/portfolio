@@ -1,65 +1,22 @@
 <script setup>
-const capabilities = [
+const services = [
   {
     icon: '🌐',
     title: '企业官网 / 品牌站',
     description: '从需求分析到上线运营，独立交付完整品牌展示网站。',
-    features: ['响应式设计，适配全设备', 'SEO 优化，提升搜索排名', 'ScrollReveal 动画增强体验', '已上线运营 2 个商业客户'],
+    features: ['响应式设计，适配全设备', 'SEO 优化，提升搜索排名', '动效交互增强体验', '已上线运营多个商业客户'],
+  },
+  {
+    icon: '🖼️',
+    title: '展示站 / 作品集',
+    description: '个人IP、工作室、摄影师专属展示网站，突出视觉效果。',
+    features: ['视觉优先设计', '图片/视频画廊', '响应式适配', '快速上线'],
   },
   {
     icon: '📊',
     title: '后台管理系统',
     description: '全栈开发管理后台，数据可视化与业务逻辑一体化。',
-    features: ['Vue3 + TypeScript 前端架构', 'Element Plus + ECharts 可视化', 'Node.js + SQLite 后端', 'Docker 容器化部署'],
-  },
-  {
-    icon: '🎬',
-    title: '摄影摄像 & 后期',
-    description: '活动跟拍、产品拍摄、视频剪辑，从素材到成片全流程。',
-    features: ['团建 / 户外活动全程跟拍', 'Premiere Pro 剪辑调色', 'After Effects 动态特效', '2 年摄影行业经验'],
-  },
-]
-
-const pricing = [
-  {
-    icon: '🌐',
-    service: '官网 / 品牌站',
-    price: '1,800 - 3,500',
-    unit: '元',
-    cycle: '3-5 天',
-    includes: ['响应式设计', 'SEO 基础优化', '部署上线', '1 个月免费维护'],
-  },
-  {
-    icon: '🤖',
-    service: 'AI 工具站',
-    price: '3,000 - 6,000',
-    unit: '元',
-    cycle: '5-7 天',
-    includes: ['前端界面开发', 'API 接入集成', '部署上线', '1 个月免费维护'],
-  },
-  {
-    icon: '📊',
-    service: '后台管理系统',
-    price: '4,000 - 8,000',
-    unit: '元',
-    cycle: '7-10 天',
-    includes: ['数据可视化面板', '用户权限管理', '部署上线', '1 个月免费维护'],
-  },
-  {
-    icon: '📄',
-    service: '落地页 / 单页',
-    price: '800 - 1,500',
-    unit: '元',
-    cycle: '1-2 天',
-    includes: ['高转化设计', '动效交互', '部署上线', '基础维护'],
-  },
-  {
-    icon: '🧩',
-    service: 'Chrome 插件',
-    price: '2,000 - 4,000',
-    unit: '元',
-    cycle: '3-5 天',
-    includes: ['功能开发', 'Chrome 商店上架', '文档说明', '1 个月免费维护'],
+    features: ['Vue3 + TypeScript 前端', '数据可视化面板', '用户权限管理', 'Docker 部署'],
   },
 ]
 
@@ -69,22 +26,30 @@ const process = [
   { step: '03', title: '设计开发', desc: '按节点推进，每周同步进度' },
   { step: '04', title: '验收交付', desc: '源码 + 部署文档 + 使用说明，满意后付尾款' },
 ]
+
+const reasons = [
+  { icon: '✅', text: '已上线多个真实项目' },
+  { icon: '✅', text: '支持源码交付' },
+  { icon: '✅', text: '支持后续维护' },
+  { icon: '✅', text: 'AI 辅助开发，提高交付效率' },
+  { icon: '✅', text: '需求确认后快速开发' },
+]
 </script>
 
 <template>
-  <!-- 能力范围 -->
+  <!-- Services -->
   <section id="services" class="py-24 px-6 bg-dark-light/30">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-          接单服务
+          服务范围
         </h2>
-        <p class="text-gray text-lg">专注 AI 辅助开发，高效交付高质量项目</p>
+        <p class="text-gray text-lg">专注网站开发，高效交付高质量项目</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <div
-          v-for="item in capabilities"
+          v-for="item in services"
           :key="item.title"
           class="glow-card p-6 flex flex-col"
         >
@@ -107,8 +72,30 @@ const process = [
     </div>
   </section>
 
-  <!-- 价格表 -->
-  <section class="py-24 px-6">
+  <!-- Trust -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          为什么选择 Wade Studio
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          v-for="r in reasons"
+          :key="r.text"
+          class="glow-card p-5 flex items-center gap-3"
+        >
+          <span class="text-xl shrink-0">{{ r.icon }}</span>
+          <span class="text-gray-light text-sm">{{ r.text }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -118,36 +105,139 @@ const process = [
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          v-for="item in pricing"
-          :key="item.service"
-          class="glow-card p-6 flex flex-col"
-        >
+        <!-- Tier 1 -->
+        <div class="glow-card p-6 flex flex-col">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">{{ item.icon }}</span>
-            <h3 class="text-lg font-semibold text-white">{{ item.service }}</h3>
+            <span class="text-2xl">📦</span>
+            <h3 class="text-lg font-semibold text-white">模板安装版</h3>
           </div>
-
           <div class="mb-4">
-            <span class="text-3xl font-bold gradient-text">{{ item.price }}</span>
-            <span class="text-gray text-sm ml-1">{{ item.unit }}</span>
+            <span class="text-3xl font-bold gradient-text">199</span>
+            <span class="text-gray text-sm ml-1">元起</span>
           </div>
-
           <div class="flex items-center gap-2 mb-5 text-sm text-gray">
             <span>&#9202;</span>
-            <span>交付周期 {{ item.cycle }}</span>
+            <span>交付周期 1-2 天</span>
           </div>
-
           <ul class="space-y-2 flex-1">
-            <li
-              v-for="inc in item.includes"
-              :key="inc"
-              class="flex items-start gap-2 text-sm text-gray-light"
-            >
+            <li class="flex items-start gap-2 text-sm text-gray-light">
               <span class="text-primary mt-1 shrink-0">&#10003;</span>
-              <span>{{ inc }}</span>
+              <span>套用精选模板</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>替换 Logo / 图片 / 文字</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>响应式适配</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>部署上线指导</span>
             </li>
           </ul>
+          <p class="text-gray text-xs mt-4 pt-4 border-t border-dark-border">
+            适合已有模板快速搭建，仅替换文字、图片、Logo。<br>
+            不含定制设计，不含后台开发。
+          </p>
+          <a
+            href="#contact"
+            class="mt-6 block text-center py-2.5 border border-dark-border hover:border-primary/40 text-gray hover:text-white rounded-lg text-sm font-medium transition-all hover:bg-dark-lighter"
+          >
+            立即咨询
+          </a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="glow-card p-6 flex flex-col relative overflow-hidden">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-primary text-white text-xs font-medium rounded-bl-lg">
+            推荐
+          </div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🌐</span>
+            <h3 class="text-lg font-semibold text-white">标准企业官网</h3>
+          </div>
+          <div class="mb-4">
+            <span class="text-3xl font-bold gradient-text">599-999</span>
+            <span class="text-gray text-sm ml-1">元</span>
+          </div>
+          <div class="flex items-center gap-2 mb-5 text-sm text-gray">
+            <span>&#9202;</span>
+            <span>交付周期 3-5 天</span>
+          </div>
+          <ul class="space-y-2 flex-1">
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>多页面定制设计</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>响应式全设备适配</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>联系表单 / 在线咨询</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>SEO 基础优化</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>部署上线 + 1个月维护</span>
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            class="mt-6 block text-center py-2.5 bg-gradient-to-r from-primary to-primary-light hover:from-primary-light hover:to-accent text-white rounded-lg text-sm font-medium transition-all shadow-lg shadow-primary/25"
+          >
+            立即咨询
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="glow-card p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">⚙️</span>
+            <h3 class="text-lg font-semibold text-white">定制开发</h3>
+          </div>
+          <div class="mb-4">
+            <span class="text-3xl font-bold gradient-text">1500+</span>
+            <span class="text-gray text-sm ml-1">元</span>
+          </div>
+          <div class="flex items-center gap-2 mb-5 text-sm text-gray">
+            <span>&#9202;</span>
+            <span>交付周期 5-10 天</span>
+          </div>
+          <ul class="space-y-2 flex-1">
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>全新视觉设计</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>定制功能开发</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>后台管理系统</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>SEO + 性能优化</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-light">
+              <span class="text-primary mt-1 shrink-0">&#10003;</span>
+              <span>源码交付 + 3个月维护</span>
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            class="mt-6 block text-center py-2.5 border border-dark-border hover:border-primary/40 text-gray hover:text-white rounded-lg text-sm font-medium transition-all hover:bg-dark-lighter"
+          >
+            立即咨询
+          </a>
         </div>
       </div>
 
@@ -157,7 +247,7 @@ const process = [
     </div>
   </section>
 
-  <!-- 合作流程 -->
+  <!-- Process -->
   <section class="py-24 px-6 bg-dark-light/30">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
@@ -181,7 +271,7 @@ const process = [
 
       <div class="text-center mt-12">
         <p class="text-gray text-sm">
-          付款方式：50% 定金 + 50% 验收后付清 &nbsp;|&nbsp; 交付内容：源码 + 部署文档 + 使用说明 + 1 个月维护
+          付款方式：50% 定金 + 50% 验收后付清 &nbsp;|&nbsp; 交付内容：源码 + 部署文档 + 使用说明
         </p>
       </div>
     </div>
