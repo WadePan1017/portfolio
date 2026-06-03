@@ -3,7 +3,7 @@ import screenshotFurniture from '../assets/project-furniture.png'
 import screenshotZrzr from '../assets/project-zrzr.png'
 import screenshotAi from '../assets/project-ai-tools.png'
 import screenshotAdmin from '../assets/project-admin.png'
-import screenshotPortfolio from '../assets/project-portfolio.png'
+import screenshotPortfolio from '../assets/case-portfolio.png'
 import casePhotography from '../assets/case-photography.png'
 import caseRestaurant from '../assets/case-restaurant.png'
 import caseEducation from '../assets/case-education.png'
@@ -68,15 +68,15 @@ const cases = [
     screenshot: screenshotAdmin,
   },
   {
-    title: 'Wade Studio 个人网站',
-    category: '个人网站',
-    description: '个人品牌展示站点，深色主题与极光紫配色建立视觉辨识度。',
-    tags: ['Vue3', 'Tailwind CSS', '动画'],
+    title: 'Wade Studio 官网',
+    category: '工作室官网',
+    description: 'Wade Studio 网站开发工作室官网，包含服务介绍、三档报价、案例展示、在线咨询。',
+    tags: ['Vue3', 'Tailwind CSS', '响应式', '工作室官网'],
     highlights: [
-      '极光紫主题系统',
-      '8 个独立组件，职责清晰',
-      '打字机动画 + 锚点平滑滚动',
-      '移动端完整适配',
+      '三档报价体系（199/599+/1500+）',
+      '5个行业模板案例展示',
+      '固定咨询入口 + 联系表单',
+      '深色科技风设计',
     ],
     demo: 'https://WadePan1017.github.io/portfolio/',
     screenshot: screenshotPortfolio,
