@@ -9,8 +9,23 @@ import caseRestaurant from '../assets/case-restaurant.png'
 import caseEducation from '../assets/case-education.png'
 import caseLaw from '../assets/case-law.png'
 import caseRenovation from '../assets/case-renovation.png'
+import caseNovaSound from '../assets/case-nova-sound.png'
 
 const cases = [
+  {
+    title: '犬马Studio 音频混音工作室',
+    category: '工作室官网',
+    description: '为专业音频混音师打造的工作室官网，包含服务价目、合作艺人展示、联系方式。',
+    tags: ['响应式', '深色主题', '工作室官网', '音频行业'],
+    highlights: [
+      '原创歌曲 / 翻唱歌曲 / 杜比全景声混音服务展示',
+      '完整价目表：分轨混音、母带处理、贴唱混音',
+      '15位合作艺人展示',
+      '背景图片 + 毛玻璃卡片设计',
+    ],
+    demo: 'https://WadePan1017.github.io/nova-sound-studio/',
+    screenshot: caseNovaSound,
+  },
   {
     title: '上海非凡大师家居',
     category: '企业官网',
